@@ -7,39 +7,45 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app-container">
-    <h1>모두의 3개년 수시입시결과 석차</h1>
-    <p class="subtitle">Copyright © All Teachers</p>
+<div class="app-container">
+  <h1>모두의 3개년 수시입시결과 석차</h1>
+  <p class="subtitle">Copyright © All Teachers</p>
 
-    <!-- 필터 -->
-    <div class="controls">
-      <select id="univSelect">
-        <option value="">대학 선택</option>
-      </select>
-      <select id="trackSelect">
-        <option value="">전형 선택</option>
-      </select>
-    </div>
-
-    <!-- 탭 -->
-    <div class="tabs">
-      <button class="tab active" data-tab="hybrid">합격선 변화 (하이브리드)</button>
-      <button class="tab" data-tab="delta">연도 대비 변화량 (Delta)</button>
-    </div>
-
-    <!-- 그래프 -->
-    <div class="chart-wrap">
-      <svg id="hybridChart"></svg>
-      <svg id="deltaChart" style="display:none;"></svg>
-    </div>
-
-    <p class="legend">
-      ■ 색상 밴드: 50~70% 합격 안정 구간<br>
-      ■ 원/선: 제공된 대표 컷<br>
-      ■ Delta Chart: 최근 연도 대비 합격선 변화
-    </p>
+  <!-- 필터 -->
+  <div class="controls">
+    <select id="univSelect"><option value="">대학</option></select>
+    <select id="trackSelect"><option value="">중심전형/전형</option></select>
+    <select id="majorSelect"><option value="">모집단위</option></select>
   </div>
 
-  <script src="script.js"></script>
+  <!-- 탭 -->
+  <div class="tabs">
+    <button class="tab active" data-tab="hybrid">합격선 변화</button>
+    <button class="tab" data-tab="delta">연도 대비 변화</button>
+  </div>
+
+  <!-- 그래프 -->
+  <div class="chart-wrap">
+    <svg id="hybridChart"></svg>
+    <svg id="deltaChart" style="display:none;"></svg>
+  </div>
+
+  <!-- 데이터 표 -->
+  <div class="table-wrap">
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>모집단위</th>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2025</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
