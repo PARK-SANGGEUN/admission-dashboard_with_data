@@ -1,17 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>모두의 3개년 수시입시결과 석차</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>모두의 3개년 수시입시결과</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="app-container">
-        <h1>모두의 3개년 수시입시결과 석차</h1>
-        <p class="subtitle">Copyright@All Teachers</p>
-        <p>데이터 로드 중...</p>
+  <div class="app-container">
+    <h1>모두의 3개년 수시입시결과</h1>
+    <p class="subtitle">Copyright © All Teachers</p>
+
+    <!-- 필터 -->
+    <div class="controls">
+      <select id="univSelect">
+        <option value="">대학 선택</option>
+      </select>
+      <select id="trackSelect">
+        <option value="">전형 선택</option>
+      </select>
     </div>
-    <script src="script.js"></script>
+
+    <!-- 탭 -->
+    <div class="tabs">
+      <button class="tab active" data-tab="hybrid">합격선 변화 (하이브리드)</button>
+      <button class="tab" data-tab="delta">연도 대비 변화량 (Delta)</button>
+    </div>
+
+    <!-- 그래프 영역 -->
+    <div id="chartArea">
+      <svg id="hybridChart"></svg>
+      <svg id="deltaChart" style="display:none;"></svg>
+    </div>
+
+    <p class="explain">
+      ■ 색상 밴드: 50~70% 합격 안정 구간<br/>
+      ■ 굵은 점/선: 제공된 대표 컷<br/>
+      ■ Delta Chart: 최근 연도 대비 변화 방향
+    </p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
